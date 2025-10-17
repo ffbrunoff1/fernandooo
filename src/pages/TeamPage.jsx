@@ -211,3 +211,57 @@ export default function TeamPage() {
                 className="bg-white rounded-xl shadow-lg p-6 text-center card-hover"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-xl font-bold text-primary-800 mb-4">{value.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{value.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-primary-800 text-white">
+        <div className="container mx-auto container-padding">
+          <motion.div
+            className="text-center max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="heading-2 mb-6">
+              Pronto para <span className="text-white">Começar?</span>
+            </h2>
+            <p className="body-large text-primary-100 mb-8">
+              Nossa equipe está pronta para analisar seu caso e oferecer a melhor solução jurídica. 
+              Entre em contato conosco hoje mesmo.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/contato">
+                <motion.button
+                  className="bg-white text-primary-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Agendar Consulta Gratuita
+                </motion.button>
+              </Link>
+              <Link to="/servicos">
+                <motion.button
+                  className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary-800 transition-colors duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Conhecer Nossos Serviços
+                </motion.button>
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  )
+}
